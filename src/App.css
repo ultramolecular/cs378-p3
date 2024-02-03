@@ -1,8 +1,102 @@
-/* 
-  Style your elements by creating CSS classes here.
-  Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
-*/
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif; /* Change as needed */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light grey background */
+}
 
+/* Header styles */
+header {
+  background-color: #fff; /* White background for the header */
+  text-align: center; /* Center the text */
+  padding: 1rem 0; /* Add some padding */
+  margin-bottom: 2rem; /* Space between header and menu items */
+}
+
+header h1 {
+  font-family: 'Caveat'; /* Stylish font for the title */
+  color: #333; /* Dark grey color for the title */
+  margin: 0;
+}
+
+header p {
+  font-family:'Caveat';
+  font-style: italic; /* Italicize the slogan */
+  color: #49a4ce; /* Light grey color for the slogan */
+  margin: 0; /* Remove default margin */
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .logo {
+  height: 75px;
+  width: auto;
+  margin-right: 3px;
+  margin-left: 20px;
+}
+
+/* Menu container styles */
 .menu {
-  color: blue;
+  display: flex;
+  flex-direction: column; /* Stack the menu items vertically */
+  padding: 0; /* Remove default padding */
+}
+
+/* Card styles for side-by-side layout */
+.card {
+  flex-direction: row; /* Align children side by side */
+  border-radius: 10px; /* Rounded corners for the card */
+  margin-bottom: 1rem; /* Space between cards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  background-color: #fff; /* White background */
+}
+
+.card-img-top {
+  flex-basis: 40%; /* Take up 40% of the card's width */
+  object-fit: cover; /* Cover the area without stretching */
+  border-top-left-radius: 10px; /* Rounded top-left corner */
+  border-bottom-left-radius: 10px; /* Rounded bottom-left corner */
+}
+
+.card-body {
+  flex-basis: 60%; /* Take up the remaining 60% of the card's width */
+  padding: 1rem; /* Padding inside the card body */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+}
+
+.card-title {
+  font-weight: bold; /* Make the title bold */
+  margin-bottom: 0.5rem; /* Space below the title */
+}
+
+.card-text {
+  margin-bottom: 1rem; /* Space below the description */
+}
+
+.card-price {
+  font-weight: bold; /* Make the price bold */
+  font-style: italic;
+  margin-bottom: 0.5rem; /* Space below the price */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: row; /* Stack image and body on top of each other on smaller screens */
+  }
+
+  .card-img-top {
+    flex-basis: 40%; /* Reset flex-basis for image */
+    object-fit: cover;
+  }
+
+  .card-body {
+    flex-basis: auto; /* Reset flex-basis for card body */
+  }
 }
