@@ -92,7 +92,8 @@ header .logo {
   }
 
   .card-img-top {
-    flex-basis: 40%; /* Reset flex-basis for image */
+    width: 100%;
+    flex-basis: auto; /* Reset flex-basis for image */
     object-fit: cover;
   }
 
