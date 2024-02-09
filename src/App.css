@@ -1,11 +1,5 @@
 /* General styles */
 
-* {
-  /* Ensures padding and borders are included in the total
-      width and height of an element */
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Arial', sans-serif; /* Change as needed */
   margin: 0;
@@ -86,5 +80,3 @@ header .logo {
   font-weight: bold; /* Make the price bold */
   font-style: italic;
 }
-
-/* Responsive adjustments */
