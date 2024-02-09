@@ -1,4 +1,11 @@
 /* General styles */
+
+* {
+  /* Ensures padding and borders are included in the total
+      width and height of an element */
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Arial', sans-serif; /* Change as needed */
   margin: 0;
@@ -58,6 +65,7 @@ header .logo {
 
 .card-img-top {
   flex-basis: 40%; /* Take up 40% of the card's width */
+  max-width: 40%; /* See if this helps */
   object-fit: cover; /* Cover the area without stretching */
   border-top-left-radius: 10px; /* Rounded top-left corner */
   border-bottom-left-radius: 10px; /* Rounded bottom-left corner */
