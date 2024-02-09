@@ -65,24 +65,18 @@ header .logo {
 
 .card-body {
   flex-basis: 60%; /* Take up the remaining 60% of the card's width */
-  padding: 1rem; /* Padding inside the card body */
   display: flex;
   flex-direction: column; /* Stack children vertically */
+  justify-content: space-between;
 }
 
 .card-title {
   font-weight: bold; /* Make the title bold */
-  margin-bottom: 0.5rem; /* Space below the title */
-}
-
-.card-text {
-  margin-bottom: 1rem; /* Space below the description */
 }
 
 .card-price {
   font-weight: bold; /* Make the price bold */
   font-style: italic;
-  margin-bottom: 0.5rem; /* Space below the price */
 }
 
 /* Responsive adjustments */
@@ -93,11 +87,11 @@ header .logo {
 
   .card-img-top {
     width: 100%;
+    height: auto;
     flex-basis: auto; /* Reset flex-basis for image */
-    object-fit: cover;
   }
 
   .card-body {
-    flex-basis: auto; /* Reset flex-basis for card body */
+    flex-basis: 1; /* Reset flex-basis for card body */
   }
 }

@@ -9,7 +9,7 @@ const MenuItem = ({ title, description, imageName, price }) => {
             <img src={imgPath} className="card-img-top" alt={title}/>
             <div className='card-body'>
                 <h5 className='card-title'>{title}</h5>
-                <p className='card-text'>{description}</p>
+                <p>{description}</p>
                 <p className='card-price'>${price}</p>
                 <button className='btn btn-success'>Add</button>
             </div>
