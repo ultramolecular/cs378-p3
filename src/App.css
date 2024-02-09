@@ -80,18 +80,3 @@ header .logo {
 }
 
 /* Responsive adjustments */
-@media (max-width: 414px) {
-  .card {
-    flex-direction: row; /* Stack image and body on top of each other on smaller screens */
-  }
-
-  .card-img-top {
-    width: 50%;
-    height: auto;
-    flex-basis: auto; /* Reset flex-basis for image */
-  }
-
-  .card-body {
-    flex-basis: 1; /* Reset flex-basis for card body */
-  }
-}
