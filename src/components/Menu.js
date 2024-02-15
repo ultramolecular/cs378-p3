@@ -80,11 +80,11 @@ const menuItems = [
 ];
 
 
-const Menu = () => {
+const Menu = ({ addToCart, removeFromCart, cart}) => {
     return (        
       <div className='menu container'>
         {menuItems.map((item) => (
-          <MenuItem key={item.id} {...item}/>
+          <MenuItem key={item.id} {...item} addToCart={addToCart} removeFromCart={removeFromCart} cartQuantity={cart.find(i => i.title === item.title)?.quantity || 0}/>
         ))}
       </div>
     )
