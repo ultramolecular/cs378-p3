@@ -2,8 +2,6 @@
 
 body {
   font-family:'Caveat';
-  margin: 0;
-  padding: 0;
   background-color: #f4f4f4; /* Light grey background */
 }
 
@@ -12,17 +10,14 @@ header {
   background-color: #fff; /* White background for the header */
   text-align: center; /* Center the text */
   padding: 1rem 0; /* Add some padding */
-  margin-bottom: 2rem; /* Space between header and menu items */
+  margin-bottom: 1.5rem; /* Space between header and menu items */
 }
 
 header h1 {
-  font-family: 'Caveat'; /* Stylish font for the title */
   color: #333; /* Dark grey color for the title */
-  margin: 0;
 }
 
 header p {
-  font-family:'Caveat';
   font-style: italic; /* Italicize the slogan */
   color: #49a4ce; /* Light grey color for the slogan */
   margin: 0; /* Remove default margin */
@@ -37,8 +32,7 @@ header .brand {
 header .logo {
   height: 75px;
   width: auto;
-  margin-right: 3px;
-  margin-left: 20px;
+  margin-right: 15px;
 }
 
 /* Menu container styles */
@@ -66,7 +60,6 @@ header .logo {
 
 .card-body {
   width: 60%;
-  display: flex;
   flex-direction: column; /* Stack children vertically */
   justify-content: space-between;
 }
@@ -78,4 +71,37 @@ header .logo {
 .card-price {
   font-weight: bold; /* Make the price bold */
   font-style: italic;
+}
+
+/* Styles for the subtotal */
+.subtotal {
+  text-align: center; /* Center the subtotal text */
+  margin-top: 1rem; /* Space between menu items and subtotal */
+  padding: 1rem;
+  background-color: #fff; /* White background for the subtotal */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  border-radius: 10px; /* Rounded corners for the subtotal */
+}
+
+/* Button styles */
+.btn-circle {
+  width: 40px; /* Fixed width and height to make it circular */
+  height: 40px;
+  padding: 0; /* Remove padding */
+  border-radius: 50%; /* Make it circular */
+  font-size: 20px; /* Adjust font size as needed */
+  text-align: center; /* Align text horizontally */
+}
+
+/* Styles for the bottom buttons */
+.order-clear-buttons {
+  display: flex;
+  justify-content: space-evenly; /* Space out the buttons */
+  margin-top: 5px; /* Space from the last menu item or subtotal */
+}
+
+/* Styles for the add and remove buttons */
+.add-remove-buttons {
+  display: flex;
+  justify-content: space-evenly;
 }

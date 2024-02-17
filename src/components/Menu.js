@@ -80,12 +80,16 @@ const menuItems = [
 ];
 
 
-const Menu = ({ addToCart, removeFromCart, cart}) => {
+const Menu = ({ addToCart, removeFromCart, cart, placeOrder, clearCart }) => {
     return (        
       <div className='menu container'>
         {menuItems.map((item) => (
           <MenuItem key={item.id} {...item} addToCart={addToCart} removeFromCart={removeFromCart} cartQuantity={cart.find(i => i.title === item.title)?.quantity || 0}/>
         ))}
+        <div className="order-clear-buttons">
+          <button className="btn btn-primary" onClick={placeOrder}>Order</button>
+          <button className="btn btn-secondary" onClick={clearCart}>Clear all</button>
+        </div>
       </div>
     )
 }

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './components/Header';
 import Menu from './components/Menu';
+import Subtotal from './components/Subtotal';
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
       if (inCart && inCart.quantity > 1) {
         // Decrement quantity by 1
         return prevCart.map((i) =>
-          i.title === item.title ? { ...i, quantity: i.quantity - 1} : i
+          i.title === item ? { ...i, quantity: i.quantity - 1} : i
         );
       } else {
         // If not in cart or only 1, remove from cart
@@ -50,10 +51,37 @@ function App() {
     }
   };
 
+  // Clear the cart function
+  const clearCart = () => {
+    setCart([]);
+    setTotal(0);
+  }
+
+  // Place order function
+  const placeOrder = () => {
+    // If nothing in cart...
+    if (cart.length === 0) {
+      alert("No items in cart!");
+    } else {
+      let summary = cart.map(item => `${item.quantity} x ${item.title}`).join(", ");
+      alert(`Your order has been placed: ${summary}`);
+      // Clear the cart after order has been placed
+      clearCart();
+    }
+  }
+
+
   return (
     <div>
       <Header />
-      <Menu addToCart={addToCart} removeFromCart={removeFromCart} cart={cart}/>
+      <Menu
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        cart={cart}
+        placeOrder={placeOrder}
+        clearCart={clearCart}
+      />
+      <Subtotal cart={cart}/>
     </div>
   );
 }
