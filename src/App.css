@@ -59,9 +59,10 @@ header .logo {
 }
 
 .card-body {
-  width: 60%;
+  display: flex;
   flex-direction: column; /* Stack children vertically */
   justify-content: space-between;
+  width: 60%;
 }
 
 .card-title {
@@ -85,12 +86,19 @@ header .logo {
 
 /* Button styles */
 .btn-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px; /* Fixed width and height to make it circular */
   height: 40px;
   padding: 0; /* Remove padding */
   border-radius: 50%; /* Make it circular */
   font-size: 20px; /* Adjust font size as needed */
-  text-align: center; /* Align text horizontally */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Styles for the bottom buttons */
