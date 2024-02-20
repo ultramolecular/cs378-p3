@@ -33,8 +33,10 @@ function App() {
     // Check if item in cart and at least 1 of it
     const inCart = cart.find((i) => i.title === item);
 
+    if (!inCart) return;
+
     setCart((prevCart) => {
-      if (inCart && inCart.quantity > 1) {
+      if (inCart.quantity > 1) {
         // Decrement quantity by 1
         return prevCart.map((i) =>
           i.title === item ? { ...i, quantity: i.quantity - 1} : i
@@ -45,11 +47,12 @@ function App() {
       }
     });
 
-    if (inCart) {
-      // Update total price
-      setTotal((prevTotal) => prevTotal - inCart.price);
+    setTotal((prevTotal) => {
+      const newTotal = prevTotal - inCart.price;
+      // This is to prevent negative zero floating point weirdness
+      return newTotal > 0 ? newTotal : 0;
     }
-  };
+  )};
 
   // Clear the cart function
   const clearCart = () => {
@@ -81,7 +84,7 @@ function App() {
         placeOrder={placeOrder}
         clearCart={clearCart}
       />
-      <Subtotal cart={cart}/>
+      <Subtotal total={total}/>
     </div>
   );
 }
