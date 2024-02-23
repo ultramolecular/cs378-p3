@@ -66,10 +66,8 @@ function App() {
     if (cart.length === 0) {
       alert("No items in cart!");
     } else {
-      let summary = cart.map(item => `${item.quantity} x ${item.title}`).join(", ");
-      alert(`Your order has been placed: ${summary}`);
-      // Clear the cart after order has been placed
-      clearCart();
+      let summary = cart.map(item => `${item.quantity} x ${item.title}`).join("\n");
+      alert(`Your order has been placed: \n\n${summary}`);
     }
   }
 
